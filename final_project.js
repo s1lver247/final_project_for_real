@@ -17,7 +17,7 @@ addEventListener("keydown", jump)
 
 function jump(event) {
   if (event.key == "w") {
-   move(commander, 0, -0.2)
+   move(commander, 0, -3)
  }
    if (event.key == "d") {
      move(commander, 0.2, 0)
@@ -26,7 +26,7 @@ function jump(event) {
       move(commander, -0.2, 0)
  }
     if (event.key == "s") {
-      move(commander, 0, 0.2)
+      setY(commander, 15)
  }
  }
 
