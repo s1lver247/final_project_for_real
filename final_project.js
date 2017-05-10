@@ -6,7 +6,7 @@ var namespace = "http://www.w3.org/2000/svg"
 //<param name="autostart" value="1">
 //<param name="playcount" value="true">
 //</object>
-
+var ground = makeImage()
 var commander = makeImage("Sprites/Scott_idle.gif", 19, 10, 5, 5)
 var cX = getX(commander)
 var cY = getY(commander)
@@ -31,13 +31,27 @@ function jump(event) {
  }
 
 var enemy = makeImage("file:///C:/Users/Student/Documents/GitHub/final_project/Sprites/shyguy.gif", 30, 15, 5, 5)
-var CY = getY(enemy)
-var CX = getX(enemy)
 
-function animate() {
-  move(enemy, -4, 0)
-  requestAnimationFrame(animate)
-}
+var cX = getX(enemy)
+var cY = getY(enemy)
+setY(enemy, 15)
+setX(enemy,  30)
+addEventListener("keydown", speed)
+
+function speed(event) {
+  if (event.key == "ArrowUp") {
+   move(enemy, 0, -3)
+ }
+   if (event.key == "ArrowRight") {
+     move(enemy, 0.2, 0)
+ }
+    if (event.key == "ArrowLeft") {
+      move(enemy, -0.2, 0)
+ }
+    if (event.key == "ArrowDown") {
+      setY(enemy, 15)
+ }
+ }
 
 // comment comment
 
