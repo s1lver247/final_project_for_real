@@ -6,8 +6,9 @@ var namespace = "http://www.w3.org/2000/svg"
 //<param name="autostart" value="1">
 //<param name="playcount" value="true">
 //</object>
+
 var audio = new Audio('12 - Im At 9933mp3');
-audio.play(Audio);
+audio.play();
 
 var ground = makeImage()
 var commander = makeImage("Sprites/Scott_idle.gif", 19, 10, 5, 5)
