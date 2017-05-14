@@ -7,7 +7,7 @@ var namespace = "http://www.w3.org/2000/svg"
 //<param name="playcount" value="true">
 //</object>
 
-var audio = new Audio('12 - Im At 9933mp3');
+var audio = new Audio('audio.mp3');
 audio.play();
 
 var ground = makeImage()
@@ -24,17 +24,23 @@ function jump(event) {
    move(commander, 0, -3)
  }
    if (event.key == "d") {
-     move(commander, 0.2, 0)
+     move(commander, 0.7, 0)
  }
     if (event.key == "a") {
-      move(commander, -0.2, 0)
+      move(commander, -0.7, 0)
  }
     if (event.key == "s") {
       setY(commander, 15)
  }
- }
 
-var enemy = makeImage("file:///C:/Users/Student/Documents/GitHub/final_project/Sprites/shyguy.gif", 30, 15, 5, 5)
+
+ if (collides(commander, flag)) {
+   makeText("p1 wins", 15, 20, 10, "sans-serif", "red", 1)
+ } else if (collides(commander, enemy)) {
+   makeText("p2 wins", 15, 20, 10, "sans-serif", "red", 1)
+ }
+ }
+var enemy = makeImage("Sprites/shyguy.gif", 30, 15, 5, 5)
 
 var cX = getX(enemy)
 var cY = getY(enemy)
@@ -47,16 +53,17 @@ function speed(event) {
    move(enemy, 0, -3)
  }
    if (event.key == "ArrowRight") {
-     move(enemy, 0.2, 0)
+     move(enemy, 0.6, 0)
  }
     if (event.key == "ArrowLeft") {
-      move(enemy, -0.2, 0)
+      move(enemy, -0.6, 0)
  }
     if (event.key == "ArrowDown") {
       setY(enemy, 15)
  }
  }
-
+var flag = makeImage("sprites/flag.png", 38, 15, 5, 5)
+var KITTY = makeImage("sprites/tabbycat_2.png", 50, 15, 5, 5)
 // comment comment
 
 // DO NOT EDIT CODE BELOW THIS LINE!
